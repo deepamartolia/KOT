@@ -1,0 +1,27 @@
+Title: F1: A Distributed SQL Database That Scales
+
+Key points:
+1. Provides scalablity/high availablity of no sql and usablity/ consistency of sql databases. what do they mean by usablity in sql db is related ACID properties or relational tables?
+2. F1 is distributed relational database, which seems interesting as in a distributed systems maintaining strong consistency seems challnging.
+3. sync replication means high latenecy and they are saying it is getting mitigated using hierarchical schema model with structured data
+types, what does it even means?
+3. F1 has fully functional distributed SQL query engine and automatic change tracking and publishing.
+
+Questions for later exploration:
+1. F1 is built on Spanner. What is Spanner? it say spanner provides strong consistency and sync cross data center replication, are these two interelated?
+2. scalable and highly available system like big table what is it. how resharding is challenging? 
+3. OLTP and OLAP databases?
+4. How sharing works? internally? notes from paper: "resharding data without breaking applications was challenging".
+5. Revise cap theorem.
+
+F1 was created to replace a sharded MySQL implementation, in order to meet the increasing scalability and reliability demands.
+
+The key goals achieved through the F1 database are:
+
+Scalability: Complex queries requiring data sharing were previously limited by sharding, but F1's design allows for greater scalability.
+Availability: As the data is critical to Google's core business, the system must be highly available to prevent downtime impacting revenue.
+Consistency: Transactions must be ACID compliant and data must be correct and consistent. 
+concurrency anomalies is error prone and time consuming basically not worth the performance gain.
+Usability: SQL query support is essential for ad-hoc queries.
+
+
